@@ -1122,3 +1122,322 @@
 .socials a svg { width:18px; height:18px; color:inherit; }
 .socials a:hover { transform:translateY(-3px); background:rgba(0,0,0,0.04); }
 .cta { background:linear-gradient(90deg,#7c3aed,#06b6d4); color:#fff; padding:9px 14px; border-radius:10px; text-decoration:none; font-weight:700; }
+
+
+/* responsive */
+/* ===============================
+   GLOBAL RESPONSIVE FIXES
+================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+@media (max-width: 992px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 120px 5vw 80px;
+    text-align: center;
+  }
+
+  .art-circle,
+  .tilt-wrap {
+    display: none;
+  }
+
+  .hero-inner h1 {
+    font-size: 32px;
+  }
+}
+
+/* ===============================
+   WHY OVERLAP
+================================ */
+@media (max-width: 900px) {
+  .why-card {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .why-card > div:nth-child(2) {
+    display: none;
+  }
+}
+
+/* ===============================
+   ABOUT SECTION
+================================ */
+@media (max-width: 900px) {
+  #about > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  #about img {
+    margin-top: 30px;
+  }
+}
+
+/* ===============================
+   SERVICES → 1 CARD PER ROW
+================================ */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .service-card,
+  .service-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-media {
+    margin-bottom: 14px;
+  }
+}
+
+/* ===============================
+   EXPERT SECTION
+================================ */
+@media (max-width: 900px) {
+  .expert-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .expert-right {
+    order: -1;
+  }
+
+  .avatar-row {
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   PORTFOLIO GRID
+================================ */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   PRICING
+================================ */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ===============================
+   TESTIMONIALS
+================================ */
+@media (max-width: 900px) {
+  .carousel-track {
+    gap: 18px;
+  }
+
+  .t-card {
+    min-width: 85%;
+  }
+}
+
+/* ===============================
+   BLOG SECTION
+================================ */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-right {
+    text-align: center;
+  }
+
+  .avatar-stack {
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   FOOTER
+================================ */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.desktop-nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.cta {
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #111;
+}
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9998;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* SIDEBAR */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 78%;
+  max-width: 320px;
+  background: #0b0f19;
+  color: #fff;
+  padding: 26px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 9999;
+}
+
+.mobile-sidebar.active {
+  transform: translateX(0);
+}
+
+/* CLOSE ICON */
+.sidebar-top {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.close-btn {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* LINKS */
+.mobile-sidebar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mobile-cta {
+  margin-top: 20px;
+  background: #6d28d9;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .desktop-nav,
+  .desktop-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+.mobile-sidebar.active {
+  transform: translateX(0);
+}
