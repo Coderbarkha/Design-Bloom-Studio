@@ -127,4 +127,29 @@ document.querySelectorAll('#year').forEach(el=>el.innerText = new Date().getFull
       document.getElementById("contactForm").reset();
     }
   });
+  // mobile sidebar toggle
+const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('mobileSidebar');
+  const closeBtn = document.getElementById('closeSidebar');
+  const overlay = document.getElementById('overlay');
+
+  // open sidebar
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+  });
+
+  // close sidebar
+  function closeSidebar() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  // close on menu click
+  sidebar.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
 
